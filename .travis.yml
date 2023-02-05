@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t jmsplngy/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run jmsplngy/docker-react npm run test
